@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Paws & Preferences </title>
+    <!-- for external css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Paws & Preferences 🐈</h1>
+    <p class="tagline">Your one stop to the purr-fect kitty 🐾</p>
+
+
+    <div id="container"> 
+        <div id="cat-counter">
+            <span id="current">1</span> / <span id="total">10</span>
+        </div>
+        
+        <!-- cats photo -->
+        <div id="card-container"></div>
+        
+        <!-- count total cats they like and display them -->
+        <div id="summary" class="hidden">
+            <h2>Total 🐈 liked: <span id="total-likes"></span></h2>
+            <p>Your paws of the day!</p>
+            <!-- cat images liked -->
+            <div id="final-cat-images"></div>
+            <button id="restart-btn">Restart 🔄</button>
+        </div>
+
+    </div>
+    <!-- script -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

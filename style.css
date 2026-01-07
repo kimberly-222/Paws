@@ -1,0 +1,186 @@
+@font-face {
+    font-family: SuperShiny;
+    src: url(SuperShiny-0v0rG.ttf);
+}
+
+body {
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-family: SuperShiny;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+#container {
+    max-width: 360px;
+    margin: auto;
+}
+
+#cat-counter {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#card-container {
+    position: relative;
+    width: 90vw;
+    max-width: 320px;
+    height: 60vh;
+    max-height: 420px;
+    margin: auto;
+}
+
+/* cat photos */
+.card {
+    /* absolute to overlap another photo */
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    touch-action: none;
+    cursor: grab;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+/* summary */
+#summary {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+#summary h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+#summary p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#final-cat-images {
+    display: grid;
+    gap: 12px;
+    margin: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.liked-cat-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border-color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+#restart-btn {
+    border-radius: 16px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+#restart-btn:hover {
+    box-shadow: 1px 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* overlay labels for LOVE/REJECTED */
+.love-overlay,
+.rejected-overlay {
+    position: absolute;
+    top: 30px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.love-overlay {
+    left: 30px;
+    color: red;
+    border: 4px solid pink;
+    background: white;
+    transform: rotate(-15deg);
+}
+
+.rejected-overlay {
+    right: 30px;
+    color: blue;
+    border: 4px solid lightblue;
+    background: white;
+    transform: rotate(15deg);
+}
+
+/* floating hearts animation */
+.floating-heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    animation: float-up 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* floating x animation */
+.floating-x {
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    animation: float-up 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes float-up {
+    /* 0%- start, 100%- complete */
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-200px) scale(0.8);
+        opacity: 0;
+    }
+}
