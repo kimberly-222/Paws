@@ -21,6 +21,17 @@ const restartBtn = document.getElementById('restart-btn');
 const currCount = document.getElementById('current');
 const totalCount = document.getElementById('total');
 
+// for overlay
+const startBtn = document.getElementById("start-btn");
+const overlay = document.getElementById("overlay");
+const container = document.getElementById("container");
+
+// remove overlay
+startBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+    container.classList.remove("blur");
+});
+
 // initializing cat images
 function init() 
 {
@@ -28,7 +39,7 @@ function init()
     // using for loop
     for (let i = 0; i < NUM_OF_CAT_IMG; i++) 
     {
-        const url = `https://cataas.com/cat?${i}`;
+        const url = `https://cataas.com/cat?${Math.random()}`;
         catUrlList.push(url);
     }
     
@@ -113,6 +124,7 @@ function handleDragMove(e) {
         // Swiping right - show LIKE
         likeOverlay.style.opacity = Math.min(deltaX / 150, 1);
         dislikeOverlay.style.opacity = 0;
+
     } else if (deltaX < -50) {
         // Swiping left - show NOPE
         dislikeOverlay.style.opacity = Math.min(Math.abs(deltaX) / 150, 1);

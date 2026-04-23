@@ -10,6 +10,56 @@ body {
     padding: 20px;
 }
 
+/* Blur background when overlay is active */
+.blur {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Full screen overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Instruction box */
+#instruction-box {
+    background: white;
+    padding: 25px;
+    border-style: solid;
+    border-color: hotpink;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Button */
+#start-btn {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff7aa2;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hide overlay */
+.hidden {
+    display: none;
+}
+
 h1 {
     font-family: SuperShiny;
     font-size: 1.5rem;
@@ -98,10 +148,6 @@ h1 {
     object-fit: cover;
     border-radius: 12px;
     border-color: black;
-}
-
-.hidden{
-    display: none;
 }
 
 #restart-btn {
