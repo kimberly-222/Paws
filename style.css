@@ -43,6 +43,16 @@ body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
 /* Button */
 #start-btn {
     margin-top: 15px;
